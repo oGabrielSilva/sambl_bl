@@ -1,0 +1,23 @@
+.dashboard {
+  width: calc(100vw - 250px);
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 250px;
+  transform: translateY(-50%);
+  background: transparent;
+  padding: 50px 50px 0 20px;
+  overflow: auto;
+}
+
+.dashboard * {
+  background: transparent;
+  color: var(--white);
+}
+
+.button {
+  background: var(--text-disabled);
+  color: var(--white);
+  padding: 8px 14px;
+  border-radius: 2px;
+}
