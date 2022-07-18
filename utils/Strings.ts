@@ -16,6 +16,11 @@ const pt = {
   subtitle: {
     adminNavSubtitle: 'Bem-vindo ao painel de administração, ',
   },
+  admin: {
+    article: {
+      authorName: 'Autor',
+    },
+  },
 }
 
 const en = {
@@ -35,6 +40,11 @@ const en = {
   },
   subtitle: {
     adminNavSubtitle: 'Welcome to the admin panel, ',
+  },
+  admin: {
+    article: {
+      authorName: 'Author',
+    },
   },
 }
 

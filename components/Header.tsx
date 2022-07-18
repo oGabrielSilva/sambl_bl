@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { strings } from '../utils/Constants'
 import styles from '../styles/Nav.module.css'
 import ButtonAdmin from './ButtonAdmin'
+import { SamblContext } from '../context/Sambl'
 
-export type HeaderMenuAdminOptions = 'Home' | 'Article' | 'Category' | 'Tag'
-
-type HeaderAdminProps = {
-  menuAdminOption: HeaderMenuAdminOptions
-  setMenuAdminOption: (item: HeaderMenuAdminOptions) => void
-}
-
-const HeaderAdmin = ({ menuAdminOption, setMenuAdminOption }: HeaderAdminProps) => {
+const HeaderAdmin = () => {
+  const { menuAdminOption, setMenuAdminOption } = useContext(SamblContext)
   const [homeMouseIn, setHomeMouseIn] = useState(false)
   const [articleMouseIn, setArticleMouseIn] = useState(false)
   const [categoryMouseIn, setCategoryMouseIn] = useState(false)

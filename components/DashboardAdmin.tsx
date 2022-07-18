@@ -1,16 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { SamblContext } from '../context/Sambl'
 import style from '../styles/Dashboard.module.css'
 import Article from './Dashboard/Article'
 import Category from './Dashboard/Category'
 import Home from './Dashboard/Home'
 import Tag from './Dashboard/Tag'
-import { HeaderMenuAdminOptions } from './Header'
 
-type DashboardProps = {
-  menuAdminOption: HeaderMenuAdminOptions
-}
+const Item = () => {
+  const { menuAdminOption } = useContext(SamblContext)
 
-const Item = ({ menuAdminOption }: DashboardProps) => {
   switch (menuAdminOption) {
     case 'Home':
       return <Home />
@@ -25,10 +23,10 @@ const Item = ({ menuAdminOption }: DashboardProps) => {
   }
 }
 
-const Dashboard = ({ menuAdminOption }: DashboardProps) => {
+const Dashboard = () => {
   return (
     <main className={style.dashboard}>
-      <Item menuAdminOption={menuAdminOption} />
+      <Item />
     </main>
   )
 }
