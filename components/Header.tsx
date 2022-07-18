@@ -5,7 +5,7 @@ import ButtonAdmin from './ButtonAdmin'
 import { SamblContext } from '../context/Sambl'
 
 const HeaderAdmin = () => {
-  const { menuAdminOption, setMenuAdminOption } = useContext(SamblContext)
+  const { menuAdminOption, openNav, setMenuAdminOption } = useContext(SamblContext)
   const [homeMouseIn, setHomeMouseIn] = useState(false)
   const [articleMouseIn, setArticleMouseIn] = useState(false)
   const [categoryMouseIn, setCategoryMouseIn] = useState(false)
@@ -13,7 +13,7 @@ const HeaderAdmin = () => {
 
   return (
     <header>
-      <nav className={styles.nav}>
+      <nav className={(openNav && styles.nav) || styles.closeNav}>
         <h1 className={styles.title}>{strings.title.adminNavTitle}</h1>
         <p className={styles.subtitle}>{strings.subtitle.adminNavSubtitle}</p>
         <ButtonAdmin

@@ -24,8 +24,10 @@ const Item = () => {
 }
 
 const Dashboard = () => {
+  const { openNav } = useContext(SamblContext)
+
   return (
-    <main className={style.dashboard}>
+    <main className={(openNav && style.dashboard) || style.dashboardNavClose}>
       <Item />
     </main>
   )

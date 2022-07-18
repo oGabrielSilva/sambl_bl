@@ -14,7 +14,7 @@ type mediumMasterContainerType =
   | 'mobileMasterContainer'
 
 const Article = () => {
-  const { screenSize } = useContext(SamblContext)
+  const { screenSize, openNav, setOpenNav } = useContext(SamblContext)
   const [posts, setPosts] = useState(mockPosts)
   const [images, setImages] = useState(mockImages)
   const [media, setMedia] = useState<mediumMasterContainerType>()
@@ -31,7 +31,7 @@ const Article = () => {
       <div style={{ display: 'flex' }}>
         {screenSize <= 620 && (
           <div style={{ marginRight: 10 }}>
-            <Button>
+            <Button onClick={() => setOpenNav((v) => !v)}>
               <IoMenuOutline size={24} />
             </Button>
           </div>
@@ -51,7 +51,11 @@ const Article = () => {
       >
         {posts.map((post, index) => {
           return (
-            <div key={post.id} className={styles.container} style={{ marginRight: 10 }}>
+            <div
+              key={post.id}
+              className={styles.container}
+              style={{ marginRight: (openNav && 10) || 0 }}
+            >
               <p className={styles.title}>{post.title}</p>
               <div className={styles.module}>
                 <div className={styles.moduleInfo}>

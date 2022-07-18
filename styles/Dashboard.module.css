@@ -1,4 +1,5 @@
-.dashboard {
+.dashboard,
+.dashboardNavClose {
   width: calc(100vw - 250px);
   height: 100vh;
   position: fixed;
@@ -6,11 +7,22 @@
   left: 250px;
   transform: translateY(-50%);
   background: transparent;
-  padding: 50px 50px 50px 20px;
+  padding: 50px 20px 50px 20px;
   overflow: auto;
+  overflow-x: hidden;
+  transition: 0.5s ease;
 }
 
-.dashboard * {
+.dashboardNavClose {
+  width: 100vw;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.dashboard *,
+.dashboardNavClose * {
   background: transparent;
   color: var(--white);
 }
